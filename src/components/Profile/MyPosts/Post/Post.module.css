@@ -1,0 +1,14 @@
+.item {
+    color: black;
+}
+
+.item img {
+    border-radius: 50%;
+    width: 60px;
+}
+
+.like:hover {
+    background-color: salmon;
+    color: salmon;
+    border-radius: 50%;
+}

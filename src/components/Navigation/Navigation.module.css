@@ -1,0 +1,19 @@
+.nav {
+    grid-area: n;
+    background-color: aquamarine;
+    max-height: 500px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.item {
+    color: gold;
+}
+
+.active {
+    color: gold;
+    background-color: blueviolet;
+}

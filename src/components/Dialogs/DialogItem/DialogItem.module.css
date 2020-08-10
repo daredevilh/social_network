@@ -1,0 +1,10 @@
+.active {
+    background-color: black;
+    color: #ffffff;
+}
+
+.dialogItem {
+    text-align: center;
+    border-bottom: 2px solid salmon;
+    
+}
