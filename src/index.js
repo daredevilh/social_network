@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { Provider } from 'react-redux';
 
 
 
@@ -12,7 +13,9 @@ let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
       <React.StrictMode>
-        <App store={store} />
+        <Provider store={store}>
+          <App/>
+        </Provider>
       </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root')
