@@ -3,7 +3,9 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
 
 let inititalState = {
-    users: []
+    users: [
+        
+    ]
 };
 
 const dialogsReducer = (state = inititalState, action) => {
