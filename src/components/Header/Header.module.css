@@ -1,8 +1,22 @@
+
+
 .header {
     grid-area: h;
     background-color: aqua;
 }
   
-.header img {
-    width: 50px;
+.logo {
+    display: block;
+    width: 60px;
+    float: left
+}
+
+.loginBlock {
+    width: 100px;
+    float: right;
+    padding-right: 500px;
+}
+
+.loginBlock a {
+    color: white;
 }

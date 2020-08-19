@@ -3,16 +3,18 @@ const SET_USER_DATA = 'SET-USER-DATA';
 let initialState = {
     userId: null,
     login: null,
-    email: null
+    email: null,
+    isAuth: false
 
 }; //my id 10914
 
-const profileReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_POST: 
+        case SET_USER_DATA: 
             return {
                 ...state,
-                ...action.data
+                ...action.data,
+                isAuth: true
             };
         
         default:
@@ -21,5 +23,5 @@ const profileReducer = (state = initialState, action) => {
 }
 
 
-export const setUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
+export const setAuthUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
 export default authReducer;
