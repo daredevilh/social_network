@@ -4,13 +4,15 @@ const SET_USERS = 'SET-USERS';
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const TOGGLE_IS_FETCHING = 'SET-IS-FETCHING';
+const TOGGLE_IS_FOLLOWING_IN_PROGRESS = 'IS-FOLLOWING-IN-PROGRESS';
 
 let inititalState = {
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    isFollowingInProgress: []
 };
 
 const dialogsReducer = (state = inititalState, action) => {
@@ -69,6 +71,15 @@ const dialogsReducer = (state = inititalState, action) => {
             }
         }
 
+        case TOGGLE_IS_FOLLOWING_IN_PROGRESS: {
+            return {
+                ...state,
+                isFollowingInProgress: action.isFollowingInProgress 
+                ? [...state.isFollowingInProgress, action.userId] 
+                : state.isFollowingInProgress.filter(id => id != action.userId)
+            }
+        }
+
         default:
         return state;
     }
@@ -100,6 +111,12 @@ export const setTotalUsersCount = (totalCount) => ({
 export const toggleIsFetching = (isFetching) => ({
     type: TOGGLE_IS_FETCHING,
     isFetching
+});
+
+export const toggleIsFollowingInProgress = (isFollowingInProgress, userId) => ({
+    type: TOGGLE_IS_FOLLOWING_IN_PROGRESS,
+    isFollowingInProgress,
+    userId
 });
 
 export default dialogsReducer
