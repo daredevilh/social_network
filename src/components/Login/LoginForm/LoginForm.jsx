@@ -7,8 +7,8 @@ import { requiredField } from '../../../utils/validators/validators';
 const LoginForm = (props) => {
     return (
             <form onSubmit={props.handleSubmit}>
-                <Field placeholder='Login' name='login' component={Input} validate={requiredField} />
-                <Field placeholder='Password' name='password' component={Input} validate={[requiredField]}/>
+                <Field placeholder='Email' name='email' component={Input} validate={requiredField} />
+                <Field placeholder='Password' type='password' name='password' component={Input} validate={[requiredField]}/>
                 <div>
                     <Field component={Input} type={'checkbox'} name='rememberMe'/>
                     remember me
