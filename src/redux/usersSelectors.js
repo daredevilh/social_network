@@ -1,4 +1,19 @@
-const { StaticRouter } = require("react-router-dom")
+import {createSelector} from 'reselect';
+
+//Just an example for reselect
+export const getUsers = (state) => {
+    return state.usersPage.users;
+}
+
+export const getUsersSelector = (state) => {
+    return getUsers(state).filter(u => true);
+}
+
+export const getUsersSuperSelector = createSelector(getUsers, (users) => {
+    return users.filter(u => true);
+})
+//End of example
+
 
 export const getAllUsers = (state) => {
     return state.usersPage.users;
