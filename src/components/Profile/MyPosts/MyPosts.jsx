@@ -4,7 +4,7 @@ import Post from './Post/Post';
 import PostReduxForm from './PostForm/PostForm';
 
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
     
     let posts = props.posts.map(post => <Post message={post.message} likeCount={post.likeCount} key={post.id} />);
     
@@ -21,7 +21,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-};
+});
 
 
 export default MyPosts;

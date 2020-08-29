@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, StaticRouter} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navigation from './components/Navigation/Navigation';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -10,10 +10,10 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import UsersContainer from './components/Users/UsersContainer';
 import Login from './components/Login/Login';
-import {initializeApp} from './redux/appReducer';
-import {connect} from 'react-redux';
-import {compose} from 'redux';
-import {withRouter} from 'react-router-dom'
+import { initializeApp } from './redux/appReducer';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom'
 import Preloader from './components/common/Preloader/Preloader';
 
 
