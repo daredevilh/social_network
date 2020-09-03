@@ -11,14 +11,14 @@ const TOGGLE_IS_FOLLOWING_IN_PROGRESS = 'IS-FOLLOWING-IN-PROGRESS';
 
 let inititalState = {
     users: [],
-    pageSize: 5,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
     isFollowingInProgress: []
 };
 
-const dialogsReducer = (state = inititalState, action) => {
+const usersReducer = (state = inititalState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
@@ -104,7 +104,7 @@ export const toggleIsFollowingInProgress = (isFollowingInProgress, userId) => ({
 
 export const requestUsers = (page, pageSize) => async (dispatch) => { //Thunk Creator
     dispatch(toggleIsFetching(true));
-    //dispatch(setCurrentPage(page));
+    dispatch(setCurrentPage(page)); //for paginator
     
     let data = await usersAPI.getUsers(page, pageSize);
     dispatch(toggleIsFetching(false));
@@ -130,4 +130,4 @@ export const follow = (userId) => async (dispatch) => {
 }
 
 
-export default dialogsReducer;
+export default usersReducer;

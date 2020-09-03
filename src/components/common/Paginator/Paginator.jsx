@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Paginator.module.css';
 
+const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, chunkSize = 10}) => {
 
+    let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
-const Paginator = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
-
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    
-    return (
-            <div>
-                {pages.map(p => {
-                    return <span className={props.currentPage === p && styles.selectedPage }
-                            onClick={(e) => {
-                                props.onPageChanged(p);
-                            }}>{p}</span>
+
+
+    let chunkCount = Math.ceil(pagesCount / chunkSize);
+    let [chunkNumber, setChunkNumber] = useState(1);
+    let leftChunkPageNumber = (chunkNumber - 1) * chunkSize + 1;
+    let rightChunkPageNumber = chunkNumber * chunkSize;
+
+
+    return(
+        <div className={styles.paginator}>
+            { chunkNumber > 1 && <button onClick={() => { setChunkNumber(chunkNumber - 1) }}>PREV</button> }
+
+                {pages
+                    .filter(p => p >= leftChunkPageNumber && p <= rightChunkPageNumber)
+                    .map((p) => {
+                    return <span className={currentPage === p ? styles.selectedPage : styles.pageNumber}
+                             key={p}
+                             onClick={(e) => {
+                                 onPageChanged(p);
+                             }}>{p}</span>
                 })}
-            </div>
-    )
+            { chunkCount > chunkNumber && <button onClick={() => { setChunkNumber(chunkNumber + 1) }}>NEXT</button> }
+
+
+    </div>
+    ) 
+    
 }
 
 export default Paginator;

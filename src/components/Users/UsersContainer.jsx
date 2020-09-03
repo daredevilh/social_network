@@ -10,13 +10,13 @@ import {getIsFollowingInProgress, getCurrentPage, getAllUsers, getPageSize, getT
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
         const {currentPage, pageSize} = this.props;
-        this.props.requestUsers(currentPage, pageSize);
+        this.props.getUsers(currentPage, pageSize);
     }
 
     onPageChanged = (pageNumber) => {
         const {pageSize} = this.props;
-        this.props.setCurrentPage(pageNumber);
-        this.props.requestUsers(pageNumber, pageSize);
+        //this.props.setCurrentPage(pageNumber);
+        this.props.getUsers(pageNumber, pageSize);
     }
     
     render() {
@@ -61,5 +61,5 @@ let mapStateToProps = (state) => {
 
 export default compose(
     //withAuthRedirect,
-    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleIsFollowingInProgress, requestUsers})
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleIsFollowingInProgress, getUsers: requestUsers})
 )(UsersAPIComponent);

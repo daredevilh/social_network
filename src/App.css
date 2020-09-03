@@ -1,4 +1,4 @@
-.app-wrapper {
+.appWrapper {
   display: grid;
   width: 1200px;
   margin: 0 auto;
@@ -10,7 +10,7 @@
   grid-gap: 10px;
 }
 
-.app-wrapper-content {
+.appWrapperContent {
   grid-area: c;
   background-color: bisque;
 }
