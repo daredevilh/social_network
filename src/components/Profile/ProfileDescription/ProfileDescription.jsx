@@ -24,7 +24,8 @@ const ProfileDescription = ({saveProfile, savePhoto, isOwner, profile, status, u
             () => {
                 setEditMode(false);
             }
-        )
+        );
+             
     }
     
     return (
@@ -33,7 +34,7 @@ const ProfileDescription = ({saveProfile, savePhoto, isOwner, profile, status, u
                 <img className={classes.img} src='https://image.shutterstock.com/z/stock-photo-wide-angle-panorama-autumn-forest-misty-hills-mountain-tops-in-pink-dawn-1195159864.jpg' />
             </div>
             <img className={classes.avatar} src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiuNTmUWSMIV5d4jUHP_UgIpTZHt7bElWqAw&usqp=CAU'} />
-            {editMode ? <ProfileDataForm initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
+            {editMode ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
             
             {isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
@@ -52,7 +53,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
                     <strong>Loooking for a job: </strong>{profile.lookingForAJob ? 'yes' : 'no'}
                 </div>
                 <div>
-                    <strong>My professional skills: </strong>{profile.lookingForAJobDesctipton}
+                    <strong>My professional skills: </strong>{profile.lookingForAJobDescription}
                 </div>
                 <div>
                     <strong>About me: </strong>{profile.aboutMe}

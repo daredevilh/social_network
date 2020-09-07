@@ -10,3 +10,8 @@
 .contact {
     padding-left: 10px;
 }
+
+.formSummaryError {
+    color: red;
+    font-size: 25px;
+}
