@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import styles from './LoginForm.module.css';
 import { Input } from '../../common/FormControl/FormControl';
 import { requiredField } from '../../../utils/validators/validators';
@@ -13,6 +13,8 @@ const LoginForm = (props) => {
                     <Field component={Input} type={'checkbox'} name='rememberMe'/>
                     remember me
                 </div>
+                {props.captchaUrl && <img src={props.captchaUrl} />}
+                {props.captchaUrl && <Field placeholder='Symbols from image' name='captcha' component={Input} validate={[requiredField]} /> }
                 {props.error && <div className={styles.formSummaryError}>
                     {props.error}
                 </div>} 
