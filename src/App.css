@@ -1,16 +1,25 @@
+.appp {
+  background-image: linear-gradient(rgb(222, 181, 255), rgb(255, 254, 181));
+  height: 100%;
+}
+
 .appWrapper {
   display: grid;
   width: 1200px;
   margin: 0 auto;
   grid-template-areas:
-  "h h"
+  "h c"
   "n c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
+  
 }
 
 .appWrapperContent {
   grid-area: c;
-  background-color: bisque;
+  margin-top: 10px;
+  border: 3px solid rgb(131, 5, 156);
+  border-radius: 10px;
+  background-color: white;
 }

@@ -1,3 +1,7 @@
+.profile {
+    grid-area: c;
+}
+
 img {
     width: 100%;
     display: block;

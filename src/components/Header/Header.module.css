@@ -1,16 +1,10 @@
-
-
 .header {
     grid-area: h;
-    background-color: aqua;
+    
+    margin-top: 10px;
+    border-radius: 10px;
 }
   
-.logo {
-    display: block;
-    width: 60px;
-    float: left
-}
-
 .loginBlock {
     width: 100px;
     float: right;
@@ -19,4 +13,26 @@
 
 .loginBlock a {
     color: white;
+}
+
+.logoutBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoutBlock p {
+    font-size: 20px;
+    line-height: 20px;
+    box-shadow: 0 5px blueviolet;
+}
+
+.logoutBlock button {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+    outline: none;
 }

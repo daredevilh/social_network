@@ -1,19 +1,24 @@
 .nav {
     grid-area: n;
-    background-color: aquamarine;
-    max-height: 500px;
+    background-color: rgb(248, 248, 248);
+    max-height: 300px;
 }
 
-a {
+.item a {
     text-decoration: none;
-    color: white;
+    color: black;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .item {
-    color: gold;
+    margin-bottom: 5px;
 }
 
-.active {
-    color: gold;
-    background-color: blueviolet;
+.list {
+    list-style-type: none;
+}
+
+.active {   
+    box-shadow: 0 3px rgb(140, 0, 255);
 }

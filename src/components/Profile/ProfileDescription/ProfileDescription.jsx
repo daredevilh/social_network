@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import classes from './ProfileDescription.module.css';
+import styles from './ProfileDescription.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
@@ -29,16 +29,15 @@ const ProfileDescription = ({saveProfile, savePhoto, isOwner, profile, status, u
     }
     
     return (
-        <div>
-            <div>
-                <img className={classes.img} src='https://image.shutterstock.com/z/stock-photo-wide-angle-panorama-autumn-forest-misty-hills-mountain-tops-in-pink-dawn-1195159864.jpg' />
+        <div className={profile}>
+            <label className={styles.fileContainer}>
+                <img className={styles.avatar} src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiuNTmUWSMIV5d4jUHP_UgIpTZHt7bElWqAw&usqp=CAU'} />
+                {isOwner && <input className={styles.inputImage} type='file' onChange={onMainPhotoSelected}/>}
+            </label>
+            <div className={styles.contacts}>
+                {editMode ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
             </div>
-            <img className={classes.avatar} src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiuNTmUWSMIV5d4jUHP_UgIpTZHt7bElWqAw&usqp=CAU'} />
-            {editMode ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
-            
-            {isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
-            <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
-
         </div>
     )
 };
@@ -71,7 +70,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
 
 
 const Contact = ({contactTitle, contactValue}) => {
-    return <div className={classes.contact}><strong>{contactTitle}: </strong>{contactValue}</div>
+    return <div className={styles.contact}><strong>{contactTitle}: </strong>{contactValue}</div>
 }
 
 export default ProfileDescription;
