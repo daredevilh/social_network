@@ -29,48 +29,50 @@ const ProfileDescription = ({saveProfile, savePhoto, isOwner, profile, status, u
     }
     
     return (
-        <div className={profile}>
-            <label className={styles.fileContainer}>
-                <img className={styles.avatar} src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiuNTmUWSMIV5d4jUHP_UgIpTZHt7bElWqAw&usqp=CAU'} />
-                {isOwner && <input className={styles.inputImage} type='file' onChange={onMainPhotoSelected}/>}
-            </label>
-            <div className={styles.contacts}>
-                {editMode ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+        <div className={styles.profile}>
+            <div className={styles.profileDescription}>
+                {editMode ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner} status={status} updateStatus={updateStatus} />}
+
+            </div>
+            <div className={styles.photoContactBlock}>
+                <label className={styles.fileContainer}>
+                    <img className={styles.avatar} src={profile.photos.large || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiuNTmUWSMIV5d4jUHP_UgIpTZHt7bElWqAw&usqp=CAU'} />
+                    {isOwner && <input className={styles.inputImage} type='file' onChange={onMainPhotoSelected}/>}                    
+                </label>
+                <div className={styles.contacts}>
+                    {Object.keys(profile.contacts).map(key => {
+                        return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+                    })}
+                </div>
             </div>
         </div>
     )
 };
 
-const ProfileData = ({profile, isOwner, goToEditMode}) => {
+const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => {
     return (
         <>
-            <div>
-                {isOwner && <button onClick={goToEditMode}>edit</button>}
+            <div className={styles.hInfo}>
                 <h1>{profile.fullName}</h1>
-                <div>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+                <p>
                     <strong>Loooking for a job: </strong>{profile.lookingForAJob ? 'yes' : 'no'}
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>My professional skills: </strong>{profile.lookingForAJobDescription}
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>About me: </strong>{profile.aboutMe}
-                </div>
+                </p>
             </div>
-
-            <div>
-                <strong>Contacts: </strong>{Object.keys(profile.contacts).map(key => {
-                    return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-                })}
-            </div>
+            {isOwner && <button className={styles.editButton} onClick={goToEditMode}>Edit</button>}
     </>
     )
 }
 
 
 const Contact = ({contactTitle, contactValue}) => {
-    return <div className={styles.contact}><strong>{contactTitle}: </strong>{contactValue}</div>
+    return contactValue && <div className={styles.contact}><a href={contactValue} ><img src={require(`../../../assets/images/${contactTitle}.png`)} /></a></div>
 }
 
 export default ProfileDescription;
