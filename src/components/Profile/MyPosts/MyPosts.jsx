@@ -13,8 +13,8 @@ const MyPosts = React.memo((props) => {
     }
 
     return (
-        <div>
-            <h2>My posts</h2>
+        <div className={styles.wall}>
+            <h2>The Wall</h2>
             <PostReduxForm onSubmit={onSubmit} updateNewPostText={props.updateNewPostText} />
             <div className={styles.posts}>
                 {posts}

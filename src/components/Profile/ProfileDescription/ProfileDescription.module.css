@@ -31,7 +31,7 @@
 }
 
 .profileDescription {
-    max-width: 250px;
+    max-width: 350px;
 }
 
 .photoContactBlock {
@@ -42,17 +42,17 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .contact {
-    transition: 0.4s;
+    transition: 0.3s ease-out;
     transition-property: transform;
 }
 
 .contact:hover {
-    transform: scale(1.25) rotateZ(20deg);
+    transform: scale(1.25) rotateZ(20deg) translateY(-5px);
 }
-
 
 .fileContainer {
     overflow: hidden;
@@ -89,10 +89,25 @@
     line-height: 26px;
     text-align: center;
     cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
 }
 
 .editButton:hover {
     background-color: rgb(0, 71, 71);
+}
+
+.editContact {
+    font-size: 18px;
+}
+
+.editForm div {
+    margin-bottom: 5px;
+}
+
+.editForm div p {
+    font-size: 18px;
+    margin: 0;
 }
 
 .formSummaryError {

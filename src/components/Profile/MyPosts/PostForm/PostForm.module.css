@@ -1,0 +1,22 @@
+
+.postForm button {
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+    background-color: teal;
+    width: 100px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    margin: 5px 0 20px;
+}
+
+.field {
+    width: 300px;
+    height: 80px;
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    resize: none;
+}
