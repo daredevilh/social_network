@@ -10,7 +10,7 @@ const PostForm = (props) => {
     return (
         <form className={styles.postForm} onSubmit={props.handleSubmit}>
             <Field className={styles.field} name='newPostText' component={Textarea} validate={[requiredField, lengthValidator]} placeholder='Post message' />
-            <button>Add Post</button>   
+            <button>ADD POST</button>   
         </form>
     )
 }

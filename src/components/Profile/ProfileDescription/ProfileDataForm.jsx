@@ -31,7 +31,7 @@ const ProfileDataReduxForm = ({ profile, handleSubmit, error }) => {
                     </div>
                 })}
             </div>
-            <button className={styles.editButton}>Save</button>
+            <button className={styles.editButton}>SAVE</button>
             {error && <div className={styles.formSummaryError}>
                 {error}    
             </div>}

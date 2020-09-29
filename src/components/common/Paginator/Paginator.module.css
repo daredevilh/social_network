@@ -3,15 +3,39 @@
 }
 
 .paginator {
-    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 .pageNumber {
-    padding: 2px;
-    border: 1px solid grey;
+    display: inline-block;
+    width: 20px;
+    line-height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
 .selectedPage {
-    font-weight: bold;
-    border-color: black;
+    background-color: teal;
+    border: none;
+    color: white;
+    display: inline-block;
+    margin: 0 5px;
+    width: 20px;
+    line-height: 30px;
+}
+
+.paginatorButton {
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    color: white;
+    background-color: teal;
+    width: 70px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 20px;
 }

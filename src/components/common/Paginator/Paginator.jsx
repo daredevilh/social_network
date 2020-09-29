@@ -19,20 +19,17 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, chunk
 
     return(
         <div className={styles.paginator}>
-            { chunkNumber > 1 && <button onClick={() => { setChunkNumber(chunkNumber - 1) }}>PREV</button> }
-
+            { chunkNumber > 1 && <button className={styles.paginatorButton} onClick={() => { setChunkNumber(chunkNumber - 1) }}>PREV</button> }
                 {pages
                     .filter(p => p >= leftChunkPageNumber && p <= rightChunkPageNumber)
                     .map((p) => {
-                    return <span className={currentPage === p ? styles.selectedPage : styles.pageNumber}
+                    return <div className={currentPage === p ? styles.selectedPage : styles.pageNumber}
                              key={p}
                              onClick={(e) => {
                                  onPageChanged(p);
-                             }}>{p}</span>
+                             }}>{p}</div>
                 })}
-            { chunkCount > chunkNumber && <button onClick={() => { setChunkNumber(chunkNumber + 1) }}>NEXT</button> }
-
-
+            { chunkCount > chunkNumber && <button className={styles.paginatorButton} onClick={() => { setChunkNumber(chunkNumber + 1) }}>NEXT</button> }
     </div>
     ) 
     
