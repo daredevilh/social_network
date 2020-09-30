@@ -4,3 +4,54 @@
     font-size: 24px;
     color: whitesmoke;
 }
+
+.textfield {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    padding: 0 10px;
+    border: 1px solid black;
+}
+
+.checkboxBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.checkboxBlock p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.checkboxBlock input {
+    margin-top: 9px;
+    width: 20px;
+    height: 20px;
+}
+
+.loginButton {
+    display: block;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 70px;
+    line-height: 24px;
+    background-color: lawngreen;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin: 0 auto 30px;
+    box-shadow: 0 3px rgb(92, 184, 0);
+}
+
+.loginButton:active {
+    box-shadow: 0 1px rgb(71, 143, 0);
+    transform: translateY(2px);
+}
+
+
+

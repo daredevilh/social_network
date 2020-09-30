@@ -11,7 +11,7 @@ const ProfileDataReduxForm = ({ profile, handleSubmit, error }) => {
                 <p>Full name: </p>
                 <Field name='fullName' placeholder='Enter your full name' component={Input} validate={[]} />
             </div>
-            <div>
+            <div className={styles.checkboxBlock}>
                 <p>Looking for a job: </p>
                 <Field type='checkbox' name='lookingForAJob' placeholder='' component={Input} validate={[]} />                
             </div>

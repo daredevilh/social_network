@@ -7,18 +7,18 @@ import { requiredField } from '../../../utils/validators/validators';
 const LoginForm = (props) => {
     return (
             <form onSubmit={props.handleSubmit}>
-                <Field placeholder='Email' name='email' component={Input} validate={requiredField} />
-                <Field placeholder='Password' type='password' name='password' component={Input} validate={[requiredField]}/>
-                <div>
+                <Field className={styles.textfield} placeholder='Email' name='email' component={Input} validate={requiredField} />
+                <Field className={styles.textfield} placeholder='Password' type='password' name='password' component={Input} validate={[requiredField]}/>
+                <div className={styles.checkboxBlock}>
                     <Field component={Input} type={'checkbox'} name='rememberMe'/>
-                    remember me
+                    <p>remember me</p>
                 </div>
                 {props.captchaUrl && <img src={props.captchaUrl} />}
                 {props.captchaUrl && <Field placeholder='Symbols from image' name='captcha' component={Input} validate={[requiredField]} /> }
                 {props.error && <div className={styles.formSummaryError}>
                     {props.error}
                 </div>} 
-                <button>Login</button>
+                <button className={styles.loginButton}>login</button>
             </form>
     )
 }

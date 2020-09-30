@@ -1,0 +1,11 @@
+.login {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login h1 {
+    font-size: 34px;
+    font-weight: 500;
+}

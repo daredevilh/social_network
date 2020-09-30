@@ -15,6 +15,14 @@
     margin-bottom: 5px;
 }
 
+.animatedItem {
+    transition: box-shadow 200ms;
+}
+
+.animatedItem:hover {
+    box-shadow: 0 0 3px rgb(140, 0, 255);
+}
+
 .list {
     list-style-type: none;
 }

@@ -38,4 +38,10 @@
     cursor: pointer;
     outline: none;
     margin-bottom: 20px;
+    box-shadow: 0 5px rgb(0, 92, 92);
+}
+
+.paginatorButton:active {
+    box-shadow: 0 2px rgb(0, 73, 73);
+    transform: translateY(3px);
 }

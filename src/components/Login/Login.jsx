@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Login.module.css';
 import LoginReduxForm from './LoginForm/LoginForm';
 import { connect } from 'react-redux';
-import {login} from '../../redux/authReducer'
+import { login } from '../../redux/authReducer'
 import { Redirect } from 'react-router-dom';
 
 const Login = (props) => {
@@ -15,11 +15,10 @@ const Login = (props) => {
     }
 
     return (
-        <div>
-            <h1>LOGIN</h1>
+        <div className={styles.login}>
+            <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
         </div>
-        
     )
 }
 

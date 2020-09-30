@@ -4,11 +4,6 @@
     margin-top: 10px;
 }
   
-.loginBlock {
-    width: 100px;
-    float: right;
-    padding-right: 500px;
-}
 
 .loginBlock a {
     color: white;
@@ -33,4 +28,34 @@
     color: white;
     cursor: pointer;
     outline: none;
+    box-shadow: 0 3px rgb(210, 99, 71);
+}
+
+.logoutBlock button:active {
+    box-shadow: 0 1px rgb(180, 99, 71);
+    transform: translateY(2px);
+}
+
+.loginBlock {
+    text-decoration: none;
+}
+
+.loginBlock button {
+    display: block;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 70px;
+    line-height: 24px;
+    background-color: lawngreen;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin: 12px auto;
+    box-shadow: 0 3px rgb(92, 184, 0);
+}
+
+.loginBlock button:active {
+    box-shadow: 0 1px rgb(71, 143, 0);
+    transform: translateY(2px);
 }

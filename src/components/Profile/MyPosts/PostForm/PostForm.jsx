@@ -3,6 +3,7 @@ import {reduxForm, Field} from 'redux-form';
 import {requiredField, maxLengthCreator} from '../../../../utils/validators/validators';
 import styles from './PostForm.module.css'
 import { Textarea } from '../../../common/FormControl/FormControl';
+import { afterSubmit } from '../../../../redux/profileReducer';
 
 const lengthValidator = maxLengthCreator(100);
 
@@ -15,6 +16,6 @@ const PostForm = (props) => {
     )
 }
 
-const PostReduxForm = reduxForm({form: 'profileAddNewPostForm'})(PostForm);
+const PostReduxForm = reduxForm({form: 'profileAddNewPostForm', onSubmitSuccess: afterSubmit})(PostForm);
 
 export default PostReduxForm;

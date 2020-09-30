@@ -11,6 +11,12 @@
     cursor: pointer;
     outline: none;
     margin: 5px 0 20px;
+    box-shadow: 0 5px rgb(0, 92, 92);
+}
+
+.postForm button:active {
+    box-shadow: 0 2px rgb(0, 73, 73);
+    transform: translateY(3px);
 }
 
 .field {
